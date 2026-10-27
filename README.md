@@ -39,3 +39,9 @@ This repository includes `render.yaml` for a free Node web service. No provider 
 Render runs `npm ci --ignore-scripts`, starts `npm start`, sets `PORT`, and checks `/api/health`. Free services may sleep when idle. The actual URL is assigned by Render; do not assume a particular hostname before deployment.
 
 Keep the public demo free of real CRM credentials until authentication and authorization are added. The current integration check endpoint is not authenticated.
+
+## Free demo hosting on GitHub Pages
+
+The `.github/workflows/pages.yml` workflow deploys only `public/`, never the server or credentials. In GitHub repository Settings → Pages, set the build source to **GitHub Actions**. Push to `main` or run the workflow manually to deploy. The expected project URL is https://ml-0802.github.io/hackathon-demo/ after a successful deployment.
+
+GitHub Pages serves the interactive demo only. Connection checks and live integrations require the Node backend on another host. Never embed credentials in the static files.
