@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: relay-outreach
+    runtime: node
+    plan: free
+    buildCommand: npm ci --ignore-scripts
+    startCommand: npm start
+    healthCheckPath: /api/health
+    autoDeployTrigger: commit
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: NODE_ENV
+        value: production
